@@ -168,6 +168,10 @@
   <hr>
 
   <!-- 셀렉트 박스(콤보 박스) -->
+  <!-- 속성
+    value: 서버로 전송되는 선택한 항목의 실제값
+    selected: 항목을 미리 선택
+  -->
   <label for="cars">차량 선택:</label>
   <select id="cars">
     <option value="">선택</option>
@@ -175,5 +179,26 @@
     <option value="benz">Benz</option>
     <option value="audi" selected>Audi</option>
   </select>
+
+  <hr>
+
+  <!-- 여러 줄 입력 -->
+  <p>
+    <label for="multi">여러 줄 텍스트 입력:</label>
+  </p>
+  <textarea id="multi" cols="30" rows="6"></textarea>
+  <br>
+  <textarea id="multi" cols="30" rows="6" spellcheck="false"></textarea>
+  <br>
+  <textarea id="multi" cols="30" rows="6" style="resize: none;"></textarea>
+
+  <hr>
+
+  <!-- form(동기식): 사용자가 작성한 내용을 서버로 전송, 어떤 서버로 경로로, 어떤 방식(GET, POST)으로 전달할지 설정 -->
+  <form action="/login" method="post">
+    <input type="text" name="id">
+    <input type="password" name="pw">
+    <button type="submit">로그인</button>
+  </form>
 </body>
 </html>
