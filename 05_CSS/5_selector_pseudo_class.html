@@ -60,11 +60,45 @@
       color: red;
     } */
     
-    .fruits h3:last-child {
+    /* .fruits h3:last-child {
+      color: red;
+    } */
+
+    /* :nth-child(n) (n번째 자식 요소) */
+    /* .fruits *:nth-child(2) {
+      color: red;
+    } */
+
+    /* .fruits *:nth-child(2n) {
+      color: red;
+    } */
+    /* .fruits *:nth-child(even) {
+      color: red;
+    } */
+
+    /* .fruits *:nth-child(2n+1) {
+      color: red;
+    } */
+    /* .fruits *:nth-child(odd) {
+      color: red;
+    } */
+
+    /* .fruits *:nth-child(n+2) {
+      color: red;
+    } */
+
+    /* Quiz: 자식들 중 앞에 3개만 선택 */
+    /* .fruits *:nth-child(-n+3) {
+      color: red;
+    } */
+    /* .fruits *:not(:nth-child(n+4)) {
+      color: red;
+    } */
+
+    /* :not(s) (선택자 s를 제외) */
+    .fruits *:not(span, h3) {
       color: red;
     }
-
-
   </style>
 </head>
 <body>
