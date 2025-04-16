@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .text-input {
+      width: 120px;
+      padding: 6px 10px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.5s;
+    }
+    .text-input:focus {
+      /* border: 2px solid #f00; */
+      border-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <h2>연습</h2>
+  <form>
+    <input type="text">
+    <input type="text" class="text-input">
+    <button type="submit">전송</button>
+
+    <!-- input 태그 쓸 때 label 태그도 같이 사용(권장) -->
+    <label>너의 이름은
+      <input type="text" class="text-input">
+    </label>
+
+    <p>
+      <label for="name">너의 이름은</label>
+    </p>
+    <input type="text" id="name" class="text-input">
+  </form>
+
+  <h2>실전</h2>
+  <div class="form-background">
+    <div class="form-container">
+      <form>
+        <h3>Contact Us</h3>
+
+        
+      </form>
+    </div>
+  </div>
+</body>
+</html>
