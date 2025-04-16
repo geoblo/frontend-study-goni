@@ -43,7 +43,46 @@
       margin: 0 auto;
     }
 
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.5s;
+    }
+    .form-input:focus {
+      border: 2px solid #aaa;
+    }
 
+    .name-box {
+      display: flex;
+      /* column-gap: 20px; */
+    }
+    .name-box > div:first-child {
+      padding: 10px 10px 10px 0;
+    }
+    .name-box > div:last-child {
+      padding: 10px 0 10px 10px;
+    }
+
+    .btn-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-send {
+      padding: 8px 40px;
+      background-color: lightsalmon;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      transition: 0.5s;
+    }
+    .btn-send:hover {
+      background-color: coral;
+    }
   </style>
 </head>
 <body>
