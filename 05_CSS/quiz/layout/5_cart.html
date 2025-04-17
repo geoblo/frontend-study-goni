@@ -13,6 +13,67 @@
     table {
       border-collapse: collapse;
     }
+
+    .cart-background {
+      width: 100%;
+      background-color: lightsteelblue;
+      padding: 30px;
+    }
+    .inner {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cart-list {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    .cart-list tr {
+      border-bottom: 2px solid lightsteelblue;
+    }
+    .cart-list th, .cart-list td {
+      padding: 15px;
+      text-align: center;
+      /* border-bottom: 2px solid lightsteelblue; */
+    }
+    .cart-list th:nth-child(2) {
+      /* 의미: 다른 셀들은 최소폭을 가져가면서 해당 셀은 최대 400px까지 늘어남 */
+      width: 400px;
+    }
+    .cart-list td:nth-child(2) {
+      text-align: left;
+    }
+    /* 자식 선택자 사용 시 주의! */
+    /* .cart-list > tbody > tr:last-child > td {} */
+    .cart-list tr:last-child td {
+      text-align: right;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      font-size: 20px;
+    }
+    .btn {
+      padding: 14px 30px;
+      font-size: 20px;
+      /* font-size: inherit; */
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      background-color: coral;
+      color: #fff;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: chocolate;
+    }
+    .btn:active {
+      background-color: brown;
+    }
   </style>
 </head>
 <body>
