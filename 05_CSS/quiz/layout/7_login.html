@@ -7,6 +7,66 @@
 
   <!-- 구글 머티리얼 아이콘 -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .form-input {
+      width: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-login {
+      background-color: #09aa5c;
+      margin-top: 40px;
+    }
+    .btn-join {
+      border: 1px solid #09aa5c;
+      color: #09aa5c;
+      background-color: #fff;
+      margin-top: 10px;
+    }
+
+    .login-background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 뷰포트의 높이만큼 가득 채우려면 100%가 아님에 주의! */
+      height: 100vh;
+    }
+    .login-container {
+      width: 460px;
+      border: 1px solid #e1e3e5;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .login-container .id-box,
+    .login-container .pw-box {
+      height: 60px;
+      padding: 27px 15px 8px;
+      border: 1px solid #c5ccd2;
+    }
+    .login-container .id-box {
+      border-radius: 8px 8px 0 0;
+    }
+    .login-container .pw-box {
+      border-top: 0;
+      border-radius: 0 0 8px 8px;
+    }
+  </style>
 </head>
 <body>
   <div class="login-background">
