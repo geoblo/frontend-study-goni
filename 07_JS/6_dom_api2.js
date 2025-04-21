@@ -18,3 +18,5 @@ console.log(boxEl.textContent); // 요소의 내용 출력
 
 boxEl.textContent = 'CHANGE!!';
 console.log(boxEl.textContent);
+// (참고) innerHTML: HTML 태그까지 조작하거나 삽입하고 싶을 때
+boxEl.innerHTML = '<b>CHANGE!!</b>';
