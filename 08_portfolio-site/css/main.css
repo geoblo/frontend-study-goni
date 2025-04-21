@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 
   /* 테스트용 */
-  height: 3000px;
+  /* height: 3000px; */
 }
 
 /* 영문에만 적용할 폰트 */
@@ -22,6 +22,21 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.inner {
+  /* 고정 길이=고정형 */
+  /* width: 1200px; */
+  /* 최대값만 제한=반응형 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.animate-flash {
+  animation-name: flash;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(.43,.19,.02,1);
+  animation-iteration-count: 2;
 }
 
 /* HEADER */
@@ -75,4 +90,33 @@ header nav ul li a::after {
 }
 header nav ul li a:hover::after {
   width: 100%;
+}
+
+/* VISUAL */
+.visual {
+  /* (중요)
+    헤더가 fixed 되어 일반 배치 흐름에서 벗어남
+    fixed 헤더 다음에 오는 요소(예: 섹션)는 헤더의 높이만큼 외부 여백 추가 필요 
+  */
+  margin-top: 60px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+.visual > .inner {
+  height: calc(100vh - 60px);
+  font-size: 70px;
+  display: flex;
+  align-items: center;
+}
+
+/* 애니메이션 정의는 맨 마지막에 */
+@keyframes flash {
+  0%, 50%, 100% { 
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
 }
