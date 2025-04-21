@@ -156,12 +156,17 @@
   <hr>
 
   <!-- 범위 선택(기본값: 0~100) -->
-  <label for="volume">음량(0~10):</label>
-  <input type="range" id="volume" min="0" max="10" step="2">
+  <label for="volume">음량(0~50):</label>
+  <input type="range" id="volume" min="0" max="50" step="2">
   <span id="volumeValue"></span>
 
   <script>
-    
+    const volumeEl = document.querySelector('#volume');
+    const volumeValueEl = document.querySelector('#volumeValue');
+    volumeValueEl.textContent = volumeEl.value;
+    volumeEl.addEventListener('input', function () {
+      volumeValueEl.textContent = volumeEl.value;
+    });
   </script>
 
   <hr>
