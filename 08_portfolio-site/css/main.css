@@ -37,6 +37,26 @@ a {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+  margin: 24px auto 0;
+}
+
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+
 .animate-flash {
   animation-name: flash;
   animation-duration: 0.5s;
@@ -117,6 +137,30 @@ header nav ul li a:hover::after {
 .visual > .inner .purple {
   color: #9b30ff;
 }
+
+/* ABOUT */
+.about {
+  padding: 150px 0;
+}
+.about .about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.about .about__wrapper .about__img {
+  width: 40%;
+}
+.about .about__wrapper .about__img img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.about .about__wrapper .about__text {
+  width: 40%;
+}
+
+
+
+
 
 /* 애니메이션 정의는 맨 마지막에 */
 @keyframes flash {
