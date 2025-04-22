@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* 스크롤 이동을 부드럽게 */
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
