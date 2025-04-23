@@ -339,6 +339,26 @@ header nav ul li a:hover::after {
   column-gap: 40px;
 }
 
+/* CONTACT */
+.contact {
+  padding: 200px 0;
+}
+.contact .contact__info li {
+  line-height: 2;
+  text-align: center;
+}
+.contact .contact__sns {
+  margin-top: 20px;
+}
+.contact .contact__sns ul {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+.contact .contact__sns ul li img {
+  width: 30px;
+}
+
 /* MODAL */
 #modal, #imageModal {
   /* 화면 전체 영역 덮기 */
