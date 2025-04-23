@@ -75,3 +75,25 @@ imageCloseBtn.addEventListener('click', function () {
 console.log(new Date().getFullYear());
 const thisYear = document.querySelector('.this-year');
 thisYear.textContent = new Date().getFullYear();
+
+// 페이지 최상단으로 이동
+const toTopEl = document.querySelector('#to-top');
+
+// 페이지에 스크롤 이벤트 감지를 추가!
+// window: 브라우저 창 객체
+window.addEventListener('scroll', function () {
+  // console.log(window.scrollY); // y축 스크롤 위치
+
+  // 페이지 스크롤 위치가
+  // 500px을 넘으면 요소를 보이고,
+  // 500px을 넘지 않으면 요소 숨기기!
+  if (window.scrollY > 500) {
+    // 요소 보이기
+    toTopEl.style.opacity = '1';
+    toTopEl.style.transform = 'translateX(0)';
+  } else {
+    // 요소 숨기기
+    toTopEl.style.opacity = '0';
+    toTopEl.style.transform = 'translateX(100px)';
+  }
+});
