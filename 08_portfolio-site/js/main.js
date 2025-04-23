@@ -35,3 +35,5 @@ const swiper = new Swiper('.project .swiper', {
     prevEl: '.project .swiper-button-prev',
   },
 });
+
+// 모달창 띄우기

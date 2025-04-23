@@ -334,6 +334,10 @@ header nav ul li a:hover::after {
 .project .port .port__text li span {
   font-weight: bold;
 }
+.project .port .btn-group {
+  display: flex;
+  column-gap: 40px;
+}
 
 
 
