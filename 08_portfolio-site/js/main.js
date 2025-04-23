@@ -69,3 +69,9 @@ imageCloseBtn.addEventListener('click', function () {
 // 모달 바깥 영역 클릭 시 닫기
 // ESC 키로 닫기
 // fade 애니메이션 넣기
+
+// 현재 연도 표시
+// 날짜 정보를 가진 JS의 Date 객체를 활용
+console.log(new Date().getFullYear());
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
