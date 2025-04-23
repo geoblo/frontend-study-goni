@@ -58,10 +58,14 @@ closeBtn.addEventListener('click', function () {
 
 imageModalBtnList.forEach(function (imageModalBtn, index) {
   imageModalBtn.addEventListener('click', function () {
-    imageEl.src = 'images/work_1.jpg';
+    imageEl.src = imageModalBtn.dataset.imageSrc;
     imageModalEl.style.display = 'flex';
   });
 });
 imageCloseBtn.addEventListener('click', function () {
   imageModalEl.style.display = 'none';
 });
+// 추가로 더 해볼 만한 것!
+// 모달 바깥 영역 클릭 시 닫기
+// ESC 키로 닫기
+// fade 애니메이션 넣기
