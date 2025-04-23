@@ -37,3 +37,31 @@ const swiper = new Swiper('.project .swiper', {
 });
 
 // 모달창 띄우기
+const modalBtn = document.querySelector('.project .btn-modal');
+const modalEl = document.querySelector('#modal');
+const closeBtn = document.querySelector('#modal .btn-close');
+
+const imageModalBtnList = document.querySelectorAll('.project .btn-modal-image');
+const imageModalEl = document.querySelector('#imageModal');
+const imageCloseBtn = document.querySelector('#imageModal .btn-close');
+const imageEl = document.querySelector('#imageModal img');
+
+// Quiz: modalBtn 누르면 모달창이 뜨고 closeBtn 누르면 닫히도록 만들기
+// style 속성: JS로 CSS 스타일을 제어할 수 있는 속성
+// 예시: 요소.style.CSS속성 = "";
+modalBtn.addEventListener('click', function () {
+  modalEl.style.display = 'flex';
+});
+closeBtn.addEventListener('click', function () {
+  modalEl.style.display = 'none';
+});
+
+imageModalBtnList.forEach(function (imageModalBtn, index) {
+  imageModalBtn.addEventListener('click', function () {
+    imageEl.src = 'images/work_1.jpg';
+    imageModalEl.style.display = 'flex';
+  });
+});
+imageCloseBtn.addEventListener('click', function () {
+  imageModalEl.style.display = 'none';
+});
