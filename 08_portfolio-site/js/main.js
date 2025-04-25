@@ -78,6 +78,7 @@ thisYear.textContent = new Date().getFullYear();
 
 // 페이지 최상단으로 이동
 const toTopEl = document.querySelector('#to-top');
+const visualSpanEls = document.querySelectorAll('.visual h1 span');
 
 // 페이지에 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체
@@ -91,10 +92,20 @@ window.addEventListener('scroll', function () {
     // 요소 보이기
     toTopEl.style.opacity = '1';
     toTopEl.style.transform = 'translateX(0)';
+
+    // visual 섹션 애니메이션 빼기
+    visualSpanEls.forEach(function (visualSpan) {
+      visualSpan.classList.remove('animate-flash');
+    });
   } else {
     // 요소 숨기기
     toTopEl.style.opacity = '0';
     toTopEl.style.transform = 'translateX(100px)';
+
+    // visual 섹션 애니메이션 넣기
+    visualSpanEls.forEach(function (visualSpan) {
+      visualSpan.classList.add('animate-flash');
+    });
   }
 });
 
