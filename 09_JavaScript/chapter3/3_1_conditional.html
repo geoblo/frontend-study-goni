@@ -77,20 +77,81 @@
       document.write('Good night', '<br>');
     }
 
-    const month = Number(prompt('현재는 몇 월입니까?' , ''));
-    if (month >= 3 && month <= 5) { // 3~5
-      document.write('햇살 가득한 봄이네요!!');
-    } else if (month >= 6 && month <= 8) { // 6~8
-      document.write('여행 가기 좋은 여름이네요!!');
-    } else if (month >= 9 && month <= 11) { // 9~11
-      document.write('독서의 계절 가을이네요!!');
-    } else if (month === 12 || (month >= 1 && month <= 2)) { // 나머지 입력
-    // } else if (month === 12 || month === 1 || month === 2) { // 나머지 입력
-      document.write('눈이 오는 겨울이네요!!');
-    } else {
-      document.write('잘못 입력하셨어요!!');
-    }
+    // const month = Number(prompt('현재는 몇 월입니까?' , ''));
+    // if (month >= 3 && month <= 5) { // 3~5
+    //   document.write('햇살 가득한 봄이네요!!');
+    // } else if (month >= 6 && month <= 8) { // 6~8
+    //   document.write('여행 가기 좋은 여름이네요!!');
+    // } else if (month >= 9 && month <= 11) { // 9~11
+    //   document.write('독서의 계절 가을이네요!!');
+    // } else if (month === 12 || (month >= 1 && month <= 2)) { 
+    // // } else if (month === 12 || month === 1 || month === 2) {
+    //   document.write('눈이 오는 겨울이네요!!');
+    // } else { // 나머지 입력
+    //   document.write('잘못 입력하셨어요!!');
+    // }
     // Quiz: 명확히 하려면 else if문을 사용하여 12, 1~2를 체크하는 조건식 넣기
+
+    // 조건식에 논리형 데이터가 아닌 다른 타입의 데이터가 입력됐을 때
+    // 0, null, undefined, '', NaN은 false값, 그 밖의 값은 true
+    if ('aa') {
+      document.write('true로 취급<br>');
+    }
+
+    // (응용) 정상적인 값이 들어왔는지 판단
+    // const userName = prompt('방문자의 이름은?');
+    // if (userName !== '') {
+    // if (userName.length > 0) {
+    // if (userName) {
+    //   alert(userName + '님 반갑습니다!');
+    // }
+
+    // 4) 중첩 if문
+    // if (조건식1) {
+    //   if (조건식2) {
+    //     실행코드
+    //   }
+    // }
+
+    const dbId = 'goni';
+    const dbPw = '1234';
+    const userId = prompt('아이디는?');
+
+    // 아이디가 일치하지 않으면 굳이 비밀번호를 검사할 필요 없음
+    if (dbId === userId) { // 아이디 먼저 검사
+      // 비밀번호 검사
+      const userPw = prompt('비밀번호는?');
+
+      if (dbPw === userPw) {
+        alert(userId + '님 반갑습니다!');
+      } else {
+        alert('비밀번호가 일치하지 않습니다.');
+      }
+    } else {
+      alert('아이디가 일치하지 않습니다.');
+    }
+
+     // 2. switch
+    // 일치하는 경우의 값이 있을 경우 해당하는 case절을 선택하여 실행
+    // 일치하는 값이 없을 경우 default문(Optional)을 실행
+    // 이 때 case절의 상수 값은 숫자 혹은 문자 가능, 비교 구문 안 됨
+
+    // 1) switch문
+    // const 변수 = 값;
+    // switch (변수) {
+    //   case 값1:
+    //     실행코드1;
+    //     break;
+    //   case 값2:
+    //     실행코드2;
+    //     break;
+    //   case 값3:
+    //     실행코드3;
+    //     break;
+    //   default:
+    //     실행코드4;
+    //     break;
+    // }
   </script>
 </body>
 </html>
