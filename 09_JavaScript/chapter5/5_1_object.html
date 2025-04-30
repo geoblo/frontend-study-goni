@@ -79,8 +79,17 @@
       }
     };
     // Quiz
-    // key4의 값 출력
-    // key5의 메소드 호출
+    console.log(obj.key3.key4); // key4의 값 출력
+    console.log(obj.key3.key5()); // key5의 메소드 호출
+
+    // 6. 대괄호 표기법으로 속성 값 얻기(특징 2가지)
+    document.write('<h1>대괄호 표기법</h1>');
+    const user = {
+      name: 'goni',
+      age: 30,
+      'my hobby': ['배드민턴', '싸이클', '스노우보드'] // Key값을 띄어쓰기 넣은 형태로는 잘 안씀..
+    };
+
   </script>
 </body>
 </html>
