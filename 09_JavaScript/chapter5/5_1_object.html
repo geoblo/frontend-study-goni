@@ -90,6 +90,19 @@
       'my hobby': ['배드민턴', '싸이클', '스노우보드'] // Key값을 띄어쓰기 넣은 형태로는 잘 안씀..
     };
 
+    document.write(`name: ${user.name}<br>`);
+    document.write(`age: ${user['age']}<br>`);
+    document.write(`my hobby: ${user['my hobby']}<br>`); // 특징1: 여러 단어로 이루어진 Key값 사용 가능
+
+    // 키 값을 변수로 받아 접근하기
+    const key = prompt('사용자의 어떤 정보를 얻고 싶으신가요?', 'name');
+    document.write(user[key]); // 특징2: 변수나 복잡한 표현식 사용 가능
+
+    // 정리: 대괄호 표기법을 쓰는 이유?
+    // 1) 여러 단어로 이루어진 키에 접근할 때
+    // 2) 키 값을 변수로 받아올 때
+
+
   </script>
 </body>
 </html>
