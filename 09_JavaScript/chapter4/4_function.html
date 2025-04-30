@@ -19,8 +19,8 @@
   <!-- *** -->
   <div>
     <p>
-      <button type="button" onclick="">이전</button>
-      <button type="button" onclick="">다음</button>
+      <button type="button" onclick="gallery('PREV')">이전</button>
+      <button type="button" onclick="gallery('NEXT')">다음</button>
     </p>
     <p>
       <img src="images/pic_1.jpg" alt="포토" class="photo">
@@ -181,8 +181,21 @@
     // Quiz: 이전/다음 버튼으로 이미지를 넘기는 gallery() 함수 만들기
     // 위 *** 참조
     // 힌트: img 태그를 가져온 후 src 속성을 이용하거나 HTML 속성을 추가하는 setAttribute() 메소드 이용
+    const imageTag = document.querySelector('.photo');
+    let imgNum = 1;
 
-    
+    function gallery(direction) {
+      if (direction === 'NEXT') {
+        if (imgNum >= 8) return; // 함수 종료
+        imgNum++;
+      } else if (direction === 'PREV') {
+        if (imgNum <= 1) return; // 함수 종료
+        imgNum--;
+      }
+
+      // imageTag.src = `images/pic_${imgNum}.jpg`;
+      imageTag.setAttribute('src', `images/pic_${imgNum}.jpg`);
+    }
   </script>
 </body>
 </html>
