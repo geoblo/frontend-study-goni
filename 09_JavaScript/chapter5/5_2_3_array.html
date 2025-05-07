@@ -13,40 +13,57 @@
     // 배열 객체 생성 3가지 방식
     // 첫번째 방식
     // 변수 = new Array(값1, 값2, 값3);
+    const arr1 = new Array(1, 2, 3);
     
     // 두번째 방식
     // 변수 = new Array();
     // 변수[0] = 값1;
     // 변수[1] = 값2;
     // 변수[2] = 값3;
+    const arr2 = new Array();
+    arr2[0] = 1;
+    arr2[1] = 2;
+    arr2[2] = 3;
     
     // 세번째 방식
     // 변수 = [값1, 값2, 값3]; => 리터럴 방식 (-> 편의성을 위해)
+    const arr3 = [1, 2, 3];
 
     document.write('<h1>Array 객체</h1>');
     const arr = ['Apple', 'Banana', 'Mango'];
 
     // 배열 요소 변경
     // 인덱스로 접근해서 새로운 요소를 할당
-    
+    arr[0] = 'Kiwi';
+    console.log(arr);
 
     // 배열 요소 접근
     document.write('<h4>배열값 가져오기-1</h4>');
-    
+    document.write(arr[0], '<br>');
+    document.write(arr[1], '<br>');
+    document.write(arr[2], '<br>');
 
     document.write('<h4>배열값 가져오기-2</h4>');
     // Quiz
-    
+    for (let i = 0; i < arr.length; i++) {
+      document.write(arr[i], '<br>');
+    }
 
     document.write('<h4>배열값 가져오기-3(권장 안함)</h4>');
-    
+    for (const i in arr) { // Key 값을 가져옴
+      document.write(arr[i], '<br>');
+    }
 
     document.write('<h4>배열값 가져오기-4</h4>');
-    
+    for (const el of arr) { // Value 값을 가져옴, ES6차 문법
+      document.write(el, '<br>');
+    }
 
     document.write('<h4>배열값 가져오기-5</h4>');
     // Quiz
-    
+    arr.forEach(function (element, index) {
+      document.write(`${index}: ${element}<br>`);
+    });
 
     // 1) toString()
     // 배열 안의 모든 요소를 쉼표(,)를 이용해 결합해서 하나의 문자열로 반환
