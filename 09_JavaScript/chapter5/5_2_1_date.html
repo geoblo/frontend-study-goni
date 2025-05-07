@@ -79,22 +79,40 @@
     const theDay = someday.getDay();
 
     document.write('<h4>특정 날짜 정보</h4>');
-    document.write(`${theYear}-${theMonth + 1}-${theDate}`); // 내가 직접 포맷팅
-
+    document.write(`${theYear}-${theMonth + 1}-${theDate}`);
 
     // 실습: 특정 날짜까지 D-day 구하기
-    
-    
+    // 남은 일 수(밀리초) = 특정 날짜 객체 시간 - 현재 날짜 객체 시간
+    // 1초 = 1000ms
+    // 1분(60초) = 1000 * 60ms
+    // 1시간(60분) = 1000 * 60 * 60ms
+    // 1일(24시간) = 1000 * 60 * 60 * 24ms
+    document.write('<h4>오늘부터 종강까지 남은 일 수</h4>');
+    const classEndDate = new Date(2025, 9, 24);
+    // const diffTime = classEndDate.getTime() - today.getTime();
+    const diffTime = classEndDate - today; // 내부적으로 시간으로 변환해서 동작
+    // getTime(): 1970년 1월 1일 0시 0분 0초로부터 시작해서 지금까지 몇 ms가 지났는지
+    document.write(`${diffTime}ms<br>`);
+    document.write(`${diffTime / (1000 * 60 * 60 * 24)}일<br>`);
+    const diffDate = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    document.write(`D-day: ${diffDate}일 남았습니다.<br>`);
 
     // 3) Set 함수
     document.write('<h3>Set 함수</h3>');
-    
+    let d = new Date();
+    document.write(d, '<br>');
+    d.setFullYear(2020);
+    document.write(d, '<br>');
 
     // 날짜를 6개월 전으로 설정
-    
+    d = new Date();
+    d.setFullYear(d.getFullYear(), d.getMonth() - 6);
+    document.write(d, '<br>');
 
     // 날짜를 지난 달의 마지막 날로 설정
-    
+    d = new Date();
+    d.setMonth(d.getMonth(), 0); // 0: 지난달 말일
+    document.write(d, '<br>');
   </script>
 </body>
 </html>
