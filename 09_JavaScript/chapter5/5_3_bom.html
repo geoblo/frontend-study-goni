@@ -15,8 +15,8 @@
   <!-- ** -->
   <h2>일정 시간 간격으로 값 증감시키기</h2>
 	<p>콘솔 패널을 열어 확인하세요.</p>
-	<button type="button" onclick="">증가 정지</button>
-	<button type="button" onclick="">감소 정지</button>
+	<button type="button" onclick="clearInterval(counter)">증가 정지</button>
+	<button type="button" onclick="clearInterval(timer)">감소 정지</button>
 
   <script>
     // 브라우저 객체 모델(BOM)
@@ -82,14 +82,14 @@
     let addNum = 0;
     let subNum = 1000;
     
-    setInterval(function () {
+    const counter = setInterval(function () {
       addNum++;
       console.log('addNum: ' + addNum);
     }, 1000);
 
-    setInterval(function () {
+    const timer = setInterval(function () {
       subNum--;
-      console.log('addNum: ' + subNum);
+      console.log('subNum: ' + subNum);
     }, 1000);
 
 
@@ -105,28 +105,41 @@
 
   <!-- *** -->
   <h2>리다이렉트 하기</h2>
-  <button type="button" onclick="">Naver로 이동<br>(href 속성)</button>
-  <button type="button" onclick="">Naver로 이동<br>(assign() 메소드)</button>
-  <button type="button" onclick="">Naver로 이동<br>(replace() 메소드)</button>
+  <button type="button" onclick="href()">Naver로 이동<br>(href 속성)</button>
+  <button type="button" onclick="assign()">Naver로 이동<br>(assign() 메소드)</button>
+  <button type="button" onclick="replace()">Naver로 이동<br>(replace() 메소드)</button>
 
   <script>
     // 3. location 객체
     // 현재 URL과 관련된 속성과 메소드 제공
     // 예: 현재 URL 정보(속성), 새로고침(메소드)
     document.write('<h1>location 객체</h1>');
-    // document.write(`origin: ${}<br>`);
-    // document.write(`protocol: ${}<br>`);
-    // document.write(`host: ${}<br>`);
-    // document.write(`hostname: ${}<br>`);
-    // document.write(`port: ${}<br>`);
-    // document.write(`href: ${}<br>`);
-    // document.write(`search: ${}<br>`); // 쿼리 스트링 반환
+    document.write(`origin: ${location.origin}<br>`);
+    document.write(`protocol: ${location.protocol}<br>`);
+    document.write(`host: ${location.host}<br>`);
+    document.write(`hostname: ${location.hostname}<br>`);
+    document.write(`port: ${location.port}<br>`);
+    document.write(`href: ${location.href}<br>`);
+    document.write(`search: ${location.search}<br>`); // 쿼리 스트링 반환
 
     // location.reload(); // 새로고침
 
     // 리다이렉트 하기(위에 *** 참조)
     // 다른 주소나 페이지로 보내기
-    
+    function href() {
+      // 현재 URL을 설정
+      location.href = 'https://www.naver.com';
+    }
+    function assign() {
+      // 새 문서를 로드
+      // 히스토리 쌓임
+      location.assign('https://www.naver.com');
+    }
+    function replace() {
+      // 현재 문서를 새 문서로 교체
+      // 히스토리에서 현재 URL을 제거, 원래 문서로 back 불가
+      location.replace('https://www.naver.com');
+    }
   </script>
 
   <!-- **** -->
