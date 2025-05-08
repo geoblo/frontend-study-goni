@@ -20,7 +20,8 @@
     // 문자열 길이를 반환하는 속성
     document.write('<h4>문자열 길이</h4>');
     const txt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
+    const sln = txt.length;
+    document.write(sln, '<br>');
     // 실무 사용 사례: 
     // - 회원가입 시 '비밀번호 길이가 최소 8자리 이상 16자리 이하'와 같이 비밀번호 생성 규칙을 두는 경우, 
     // 사용자가 비밀번호를 입력하면 몇 자리로 입력되었는지 알 수 있음
@@ -33,7 +34,8 @@
     // (참고) 문자열도 배열과 같이 index의 개념이 있음
     document.write('<h4>문자열 검색</h4>');
     let str = 'Please locate where "locate" occurs!';
-    
+    let pos = str.indexOf('locate');
+    document.write(pos, '<br>');
     // 실무 사용 사례: 
     // - 전화번호를 입력받는 데 입력받을 전화번호는 하이픈(-)이 없어야 함
     // 입력된 전화번호 데이터에 하이픈(-)이 있는지를 indexOf('-')로 
@@ -44,17 +46,24 @@
     // 문자열 안에 특정 문자열이 존재하는지를 찾는 것은 동일
     // 문자열이 둘 이상 발견되면 제일 마지막에 발견된 문자열의 index를 반환(문자열 끝에서부터 검색)
     // 발견하지 못하면 -1을 반환
-    
+    pos = str.lastIndexOf('locate');
+    document.write(pos, '<br>');
     // 실무 사용 사례: 
     // - 파일 확장자 추출을 위한 index를 알아내기 위해
 
     // 검색 시작 위치(index) 지정 가능
-    
+    pos = str.indexOf('locate', 15); // 15번째 index부터 찾기 시작
+    document.write(pos, '<br>');
+    pos = str.lastIndexOf('locate', 15);
+    document.write(pos, '<br>');
 
     // (ES6차) includes()
     // 지정된 문자열이 포함된 경우 true를 반환
     // 그렇지 않으면 false를 반환
-
+    let has = str.includes('locate');
+    document.write(has, '<br>');
+    has = str.includes('locate', 15);
+    document.write(has, '<br>');
 
     // 실습: 사용자로부터 입력받은 이메일 주소 유효성 검사(정규표현식을 안쓰는 경우)
     // 실무에서는 복잡한 패턴의 경우 정규식 사용!!(사용 시 가독성↓, 간결함↑)
