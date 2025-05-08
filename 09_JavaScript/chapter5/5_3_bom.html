@@ -10,7 +10,7 @@
   <!-- * -->
   <h2>setTimeout() 동작을 취소하려면 5초 안에 버튼을 클릭하세요.</h2>
 	<p>콘솔 패널을 열어 확인하세요.</p>
-  <button type="button" onclick="">멈추기</button>
+  <button type="button" onclick="clearTimeout(myTimeout)">멈추기</button>
 
   <!-- ** -->
   <h2>일정 시간 간격으로 값 증감시키기</h2>
@@ -34,29 +34,29 @@
 
     // 1) alert()
     // 경고창을 띄워 경고 메시지를 출력
-    alert('이것은 alert 창입니다.');
+    // alert('이것은 alert 창입니다.');
 
     // 2) confirm()
     // 확인창을 띄워 진행할지, 종료할지에 대한 진행 여부를 확인
     // 확인을 누르면 true를 반환
     // 취소를 누르면 false를 반환
-    if (confirm('정말 삭제하시겠습니까?')) {
-      document.write('삭제 실행<br>');
-    }
+    // if (confirm('정말 삭제하시겠습니까?')) {
+    //   document.write('삭제 실행<br>');
+    // }
 
     // 3) prompt()
     // 질의응답 창을 띄워 문자열을 입력받음
     // 확인을 누르면 입력한 값을 반환
     // 취소를 누르면 null을 반환
-    const txt = prompt('비밀번호를 입력하세요.');
+    // const txt = prompt('비밀번호를 입력하세요.');
 
-    if (txt === null) {
-      document.write('취소 버튼을 클릭했을 때<br>');
-    } else if (txt === '') {
-      document.write('어떤 값도 입력하지 않고 확인 버튼을 클릭했을 때<br>');
-    } else if (txt !== '') {
-      document.write('값을 입력하고 확인 버튼을 클릭했을 때<br>');
-    }
+    // if (txt === null) {
+    //   document.write('취소 버튼을 클릭했을 때<br>');
+    // } else if (txt === '') {
+    //   document.write('어떤 값도 입력하지 않고 확인 버튼을 클릭했을 때<br>');
+    // } else if (txt !== '') {
+    //   document.write('값을 입력하고 확인 버튼을 클릭했을 때<br>');
+    // }
 
     // 4) window.open()
     // 팝업창(브라우저 새 창/새 탭)을 띄워 지정한 url을 오픈
@@ -72,12 +72,25 @@
     // 5) setTimeout(), clearTimeout() 
     // id = setTimeout(): 지정한 시간 뒤에 정의한 함수를 실행
     // clearTimeout(id): setTimeout으로 설정된 타이머를 지움(위에 * 참조)
-    
+    const myTimeout = setTimeout(function () {
+      console.log('5초 후 프로그램 실행');
+    }, 5000);
 
     // 6) setInterval(), clearInterval()
     // id = setInterval(): 지정한 시간 간격마다 정의한 함수를 반복적으로 실행
     // clearInterval(id): setInterval로 설정된 타이머를 지움(위에 ** 참조)
+    let addNum = 0;
+    let subNum = 1000;
     
+    setInterval(function () {
+      addNum++;
+      console.log('addNum: ' + addNum);
+    }, 1000);
+
+    setInterval(function () {
+      subNum--;
+      console.log('addNum: ' + subNum);
+    }, 1000);
 
 
     // 2. screen 객체(활용도 낮음)
