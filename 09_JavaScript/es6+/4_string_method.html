@@ -18,6 +18,12 @@
     console.log(code.startsWith('ABC'));
     console.log(code.startsWith('DEF', 3)); // 검사 시작점 지정
 
+    // 실무 사용 사례
+    // - 사용자에게 웹사이트 주소를 입력받는 필드가 있고
+    // 사용자가 입력한 웹사이트 주소가 "http"로 시작하는지 확인하고자 할 때 사용하면
+    // 올바른 url 형식으로 입력되었는지 쉽게 확인할 수 있음
+    const url = 'http://website.com';
+
     // 2. endsWith()
     // 전달한 값으로 문자열이 끝나는지 확인
     console.log(code.endsWith('DDD'));
@@ -25,6 +31,12 @@
     console.log(code.endsWith('EFG'));
     console.log(code.endsWith('EF', 6)); // 문자열의 얼마만큼만을 확인할지 길이 지정
     // 첫 6개 문자인 'ABCDEF'만을 고려, EF로 끝나므로 true
+
+    // 실무 사용 사례
+    // - 게시판에서 새 글 작성 시 첨부파일은 pdf 파일만 첨부할 수 있음
+    // 사용자가 업로드한 파일의 확장자가 pdf인지 확인할고자 할 때 사용하면
+    // pdf 파일인지를 쉽게 확인할 수 있음
+    const file = 'abc.pdf';
   </script>
 </body>
 </html>
