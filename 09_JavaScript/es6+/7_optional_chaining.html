@@ -100,7 +100,7 @@
 
 
     // Quiz
-    // 1. 다음 코드의 올바른 출력은?
+    // 1. 다음 코드의 올바른 출력은? 3
     const user = {
       name: 'Goni',
       age: 27,
@@ -141,6 +141,9 @@
     }
     console.log(universityMajor);
     
+    // 옵셔널 체이닝 사용
+    universityMajor = person.education?.university?.major;
+    console.log(universityMajor);
   </script>
 </body>
 </html>
