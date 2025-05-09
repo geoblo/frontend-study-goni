@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 함수 매개변수의 기본값
+
+    // ES5
+    function getLocation(city, country, continent) {
+      // 전달 받은 값이 없는 경우에 기본값을 제공하는 코드
+      if (country === undefined) {
+      // if (typeof country === 'undefined') {
+        country = '대한민국';
+      }
+      if (continent === undefined) {
+        continent = '아시아';
+      }
+
+      console.log(continent, country, city);
+    }
+
+    getLocation('서울');
+    getLocation('도쿄', '일본');
+
+    // ES6
+    
+  </script>
+</body>
+</html>
