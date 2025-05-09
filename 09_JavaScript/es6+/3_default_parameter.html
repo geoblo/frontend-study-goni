@@ -46,7 +46,12 @@
     // calculatePrice(10);
     // 예상 결과: 11.5
 
-    // 2. 다음 코드의 올바른 출력은?
+    const calculatePrice = (total, tax = 0.1, tip = 0.05) => {
+      return total + (total * tax) + (total * tip);
+    };
+    console.log(calculatePrice(10));
+
+    // 2. 다음 코드의 올바른 출력은? 3
     const b = 3;
     function multiply(a, b = 2) {
       return a * b;
