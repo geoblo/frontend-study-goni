@@ -6,6 +6,11 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- * -->
+  <h2>입력한 값보다 나이가 많은 사람 찾기</h2>
+  <input type="number" id="ageToCheck" value="30">
+  <button type="button" onclick="searchFunc()">검색</button>
+
   <script>
     // 유용한 배열 메소드(ES5)
 
@@ -48,7 +53,32 @@
     // ages 배열에서 19세 이상인 모든 값들로 새 배열 만들기
     const ages = [32, 33, 16, 40];
     // 예상 결과: [32, 33, 40]
+    // const newAges = ages.filter((age) => {
+    //   return age >= 19;
+    // });
+    const newAges = ages.filter(age => age >= 19);
+    console.log(newAges);
     
+    // 활용 Tip1: 검색 또는 필터링 기능 만들기
+    const students = [
+      { name: 'Goni', age: 36 },
+      { name: 'Pony', age: 32 },
+      { name: 'Tony', age: 12 },
+      { name: 'Moly', age: 24 },
+      { name: 'Noni', age: 45 },
+    ];
+
+    // * 참조
+    const searchFunc = () => {
+      const ageValue = document.querySelector('#ageToCheck').value;
+      // console.log(typeof ageValue);
+      const searchStudents = students.filter((student) => {
+        return student.age > ageValue;
+      });
+      console.log(searchStudents);
+    };
+
+
 
 
 
