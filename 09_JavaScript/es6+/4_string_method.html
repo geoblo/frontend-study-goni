@@ -81,14 +81,14 @@
 
 
     // Quiz 
-    // 1. 다음 코드의 올바른 출력은?
+    // 1. 다음 코드의 올바른 출력은? 1
     const code1 = 'ABCDEFGHI';
     code1.startsWith('EFG', 4);
 
     // 1) true
     // 2) false
 
-    // 2. 다음 코드의 올바른 출력은?
+    // 2. 다음 코드의 올바른 출력은? 2
     const code2 = 'ABCDEF';
     code2.endsWith('def');
 
@@ -99,15 +99,25 @@
     let str = 'Na';
     let bat = 'BatMan';
 
-    // let batman = ;
-    // console.log(batman);
+    let batman = `${str.repeat(8)} ${bat}`;
+    console.log(batman);
     // 예상 결과: NaNaNaNaNaNaNaNa BatMan
 
     // 4. 날짜 포맷을 연(4자리)-월(2자리)-일(2자리) 형식으로 출력하도록 코드의 구현을 완성하자.
     const now = new Date();
 
-    // console.log(formatDate);
-    // 예상 결과: 2024-03-01
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+
+    // const formatMonth = (month + '').padStart(2, '0');
+    const formatMonth = String(month).padStart(2, '0');
+    // const formatMonth = new String(month).padStart(2, '0');
+    // const formatMonth = month.toString().padStart(2, '0');
+    const formatDay = String(day).padStart(2, '0');
+    const formatDate = `${year}-${formatMonth}-${formatDay}`;
+    console.log(formatDate);
+    // 예상 결과: 2025-05-09
   </script>
 </body>
 </html>
